@@ -3,6 +3,7 @@
 config/
 node_modules/
 src/
+lib/
 
 # config files
 

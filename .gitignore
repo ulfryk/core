@@ -19,3 +19,11 @@ node_modules/
 
 # Output dir
 lib/
+/browser/
+/decorators/
+/model/
+/redux/
+/utils/
+/index.d.ts
+/index.js
+/index.js.map
