@@ -1,6 +1,6 @@
 {
   "name": "@samwise-tech/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Core utilities for Samwise projects",
   "main": "index.js",
   "types": "index.d.ts",
@@ -33,7 +33,10 @@
   "engines": {
     "node": ">=6"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/lodash": "^4.14.74",
+    "lodash": "^4.17.4"
+  },
   "devDependencies": {
     "@samwise-tech/tslint-config": "0.4.0",
     "@types/chai": "4.0.4",
