@@ -1,0 +1,54 @@
+{
+  "name": "@samwise-tech/core",
+  "version": "0.0.0",
+  "description": "Core utilities for Samwise projects",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Done\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samwise-tech/core.git"
+  },
+  "keywords": [
+    "core",
+    "typescript",
+    "ts",
+    "monet",
+    "utilities"
+  ],
+  "author": "Samwise Technology, Inc. <icunningham@samwise.tech>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samwise-tech/core/issues"
+  },
+  "homepage": "https://github.com/samwise-tech/core#readme",
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.74",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "@samwise-tech/tslint-config": "0.4.0",
+    "@types/chai": "4.0.4",
+    "@types/mocha": "2.2.43",
+    "@types/node": "8.0.28",
+    "chai": "4.1.2",
+    "mocha": "3.5.2",
+    "monet": "0.9.0-alpha.4",
+    "redux": "^3.7.0",
+    "ts-node": "3.3.0",
+    "tslib": "1.7.1",
+    "tslint": "5.7.0",
+    "typescript": "2.5.2"
+  },
+  "peerDependencies": {
+    "monet": "0.9.0-alpha.4"
+  },
+  "optionalPeerDependencies": {
+    "redux": "^3.7.0"
+  }
+}
