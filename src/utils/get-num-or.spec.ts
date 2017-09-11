@@ -1,4 +1,4 @@
-/* tslint:disable:no-unused-expression */
+/* tslint:disable:no-unused-expression no-magic-numbers */
 import { expect } from 'chai';
 
 import { getNumOr } from './get-num-or';

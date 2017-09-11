@@ -1,6 +1,6 @@
 import { bindAll, isFunction } from 'lodash';
 
-interface IBindDecorator {
+export interface IBindDecorator {
   (target: any, key: string, descriptor: PropertyDescriptor): void;
   readonly all: (target: any) => void;
   readonly key: Symbol;

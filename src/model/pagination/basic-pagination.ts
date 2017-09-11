@@ -29,6 +29,7 @@ export class BasicPagination implements IBasicPagination, ISetoid {
     public readonly limit = 10,
   ) {}
 
+  // tslint:disable-next-line:cyclomatic-complexity
   public equals(other: BasicPagination) {
     return other === this || (
       other.totalCount === this.totalCount &&

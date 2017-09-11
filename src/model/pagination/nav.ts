@@ -1,4 +1,4 @@
-interface IPaginationNavsConfig {
+export interface IPaginationNavsConfig {
   readonly currentPage: number;
   readonly pageCount: number;
   readonly wrap?: number;
@@ -8,15 +8,18 @@ const range = (start: number, end: number): number[] => Array(end - start)
   .fill(0)
   .map((__, i) => i + start);
 
+const DEFAULT_WRAP = 2;
+const SIDE_BOUND = 3;
+
 export class Nav {
 
   public static create(selected: number, separators: number[] = []) {
     return (index: number) => new Nav(index, selected === index, separators.includes(index));
   }
 
-  public static getNavs({ wrap = 2, pageCount, currentPage }: IPaginationNavsConfig): Nav[] {
-
-    const visibleRange = 2 * wrap + 1;
+  public static getNavs(config: IPaginationNavsConfig): Nav[] {
+    const { wrap = DEFAULT_WRAP, pageCount, currentPage } = config;
+    const visibleRange = 2 * wrap + 1; // tslint:disable-line:no-magic-numbers
 
     //           / --- visibleRange -----\
     //           /-  wrap -\   /-  wrap -\
@@ -36,7 +39,7 @@ export class Nav {
     //        ^ lower
     //
 
-    const lowerBoundForSeparators = 3 + visibleRange + 3;
+    const lowerBoundForSeparators = SIDE_BOUND + visibleRange + SIDE_BOUND;
 
     //       3  +  /-- visibleRange ---\  +  3
     //

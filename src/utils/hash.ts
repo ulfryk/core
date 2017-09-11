@@ -1,5 +1,7 @@
+const thirtyTwoMultiplier = 5;
+
 // tslint:disable-next-line:no-bitwise
-const getNewHash = (acc: number, code: number) => ((acc << 5) - acc) + code;
+const getNewHash = (acc: number, code: number) => ((acc << thirtyTwoMultiplier) - acc) + code;
 
 // tslint:disable-next-line:no-bitwise
 const normalizeHash = (hashed: number) => hashed & hashed;

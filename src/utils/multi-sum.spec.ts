@@ -1,4 +1,4 @@
-/* tslint:disable:no-unused-expression strict-boolean-expressions */
+/* tslint:disable:no-unused-expression strict-boolean-expressions no-magic-numbers */
 import { expect } from 'chai';
 
 import { multiSum } from './multi-sum';
