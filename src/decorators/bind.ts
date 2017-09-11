@@ -1,3 +1,5 @@
+import { bindAll } from 'lodash'; // TODO: Add tests and get rid of lodash dependency
+
 export interface IBindDecorator {
   (target: any, key: string, descriptor: PropertyDescriptor): void;
   readonly all: (target: any) => void;
@@ -39,11 +41,8 @@ Object.assign(Bind, {
   },
 
   to: (target: any) => {
-    Array.from(getCurrent(target))
-      .filter(targetKey => target[targetKey] instanceof Function)
-      .forEach(targetKey => {
-        target[targetKey] = target[targetKey].bind(target);
-      });
+    bindAll(target, Array.from(getCurrent(target))
+      .filter(targetKey => target[targetKey] instanceof Function));
   },
 
 });
