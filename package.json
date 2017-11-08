@@ -1,6 +1,6 @@
 {
   "name": "@samwise-tech/core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Core utilities for Samwise projects",
   "main": "index.js",
   "types": "index.d.ts",
@@ -11,7 +11,7 @@
     "mocha": "node_modules/.bin/mocha --opts ./mocha.opts './src/**/*.spec.ts'",
     "prepublish": "yarn build && cp -r ./lib/* ./",
     "test": "yarn outdated && yarn test-specs-for-only && yarn mocha && yarn karma && yarn lint",
-    "test-specs-for-only": "node config/test-specs-for-only.js"
+    "test-specs-for-only": "node_modules/.bin/forbidden 'src/**/*.spec.ts' -p describe.only it.only"
   },
   "repository": {
     "type": "git",
@@ -34,14 +34,15 @@
     "node": ">=6"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.74",
+    "@types/lodash": "^4.14.80",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "@samwise-tech/forbidden-patterns": "0.1.1",
     "@samwise-tech/tslint-config": "0.4.1",
     "@types/chai": "4.0.4",
-    "@types/mocha": "2.2.43",
-    "@types/node": "8.0.46",
+    "@types/mocha": "2.2.44",
+    "@types/node": "8.0.50",
     "chai": "4.1.2",
     "circular-dependency-plugin": "4.2.1",
     "core-js": "2.5.1",
@@ -54,11 +55,11 @@
     "mocha": "4.0.1",
     "monet": "0.9.0-alpha.4",
     "redux": "^3.7.0",
-    "ts-loader": "3.0.5",
+    "ts-loader": "3.1.1",
     "ts-node": "3.3.0",
     "tslib": "1.8.0",
     "tslint": "5.8.0",
-    "typescript": "2.5.3",
+    "typescript": "2.6.1",
     "webpack": "3.8.1"
   },
   "peerDependencies": {
