@@ -24,6 +24,9 @@ lib/
 /model/
 /redux/
 /utils/
+/global-imports.d.ts
+/global-imports.js
+/global-imports.js.map
 /index.d.ts
 /index.js
 /index.js.map

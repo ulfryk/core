@@ -34,8 +34,14 @@
     "node": ">=6"
   },
   "dependencies": {
+    "@samwise-tech/di": "^1.2.0",
     "@types/lodash": "^4.14.80",
-    "lodash": "^4.17.4"
+    "@types/uuid": "^3.4.3",
+    "immutable": "^3.8.2",
+    "lodash": "^4.17.4",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^5.5.7",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "@samwise-tech/forbidden-patterns": "1.0.2",
