@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/samwise-tech/core#readme",
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "dependencies": {
     "@samwise-tech/di": "^1.2.0",
