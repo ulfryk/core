@@ -1,14 +1,13 @@
 const path = require('path');
 const webpackConfig = require('./webpack.test');
 
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = (config) => {
   config.set({
     basePath: path.resolve(__dirname, '..'),
     frameworks: ['mocha', 'chai'],
-    files: [
-      'src/polyfills.ts',
-      'src/**/*.spec.ts',
-    ],
+    files: ['src/**/*.spec.ts'],
     preprocessors: { 'src/**/*.ts': ['webpack'] },
     webpack: webpackConfig,
     webpackServer: { noInfo: true, stats: require('./webpack-stats-silent') },
@@ -17,7 +16,13 @@ module.exports = (config) => {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: ['PhantomJS'],
+    browsers: ['ChromeHeadlessCustom'],
+    customLaunchers: {
+      ChromeHeadlessCustom: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox'],
+      },
+    },
     singleRun: true,
     concurrency: 6e6,
   });
