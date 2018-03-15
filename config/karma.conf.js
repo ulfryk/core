@@ -25,5 +25,6 @@ module.exports = (config) => {
     },
     singleRun: true,
     concurrency: 6e6,
+    mime: { 'text/x-typescript': ['ts','tsx'] },
   });
 };
