@@ -23,6 +23,7 @@ lib/
 /decorators/
 /model/
 /redux/
+/services/
 /utils/
 /global-imports.d.ts
 /global-imports.js
