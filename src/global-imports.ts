@@ -1,5 +1,3 @@
-import 'reflect-metadata';
-
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/map';
