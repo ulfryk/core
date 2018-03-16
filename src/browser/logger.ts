@@ -15,7 +15,7 @@ class BrowserLogger extends Logger {
   private readonly events$ = new Subject<IEvent>();
 
   constructor(
-    @Inject(JsConsole) private readonly console: JsConsole,
+    @Inject(JsConsole) private readonly nativeConsole: JsConsole,
   ) {
     super();
     Bind.to(this);
@@ -62,7 +62,7 @@ class BrowserLogger extends Logger {
   private callMethod(level: LogLevel, ...args: any[]): void {
     if (process.env.NODE_ENV !== 'production') {
       this.events$.next({ level, data: args });
-      (this.console[level as ConsoleMethod] as (...args: any[]) => void)(...args);
+      (this.nativeConsole[level as ConsoleMethod] as (...args: any[]) => void)(...args);
     }
   }
 
