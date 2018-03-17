@@ -4,6 +4,7 @@
     "allowSyntheticDefaultImports": false,
     "alwaysStrict": true,
     "charset": "utf8",
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
