@@ -62,7 +62,7 @@
     "puppeteer": "1.2.0",
     "redux": "^3.7.0",
     "reflect-metadata": "^0.1.12",
-    "ts-loader": "4.0.1",
+    "ts-loader": "4.1.0",
     "ts-node": "5.0.1",
     "tslib": "1.9.0",
     "tslint": "5.9.1",
