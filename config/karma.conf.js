@@ -1,8 +1,6 @@
 const path = require('path');
 const webpackConfig = require('./webpack.test');
 
-process.env.CHROME_BIN = require('puppeteer').executablePath();
-
 module.exports = (config) => {
   config.set({
     basePath: path.resolve(__dirname, '..'),
