@@ -1,14 +1,18 @@
-export interface IFileReadEvent extends Event {
-  readonly target: EventTarget & { readonly result: string; };
-}
+import { Maybe } from 'monet';
 
 export const readWebFile = (file: File) =>
   new Promise<string>((resolve, reject) => {
 
     const fileReader = new FileReader();
 
-    fileReader.onload = (readEvent: IFileReadEvent) => {
-      resolve(readEvent.target.result);
+    fileReader.onload = (readEvent: FileReaderProgressEvent) => {
+      Maybe.fromNull(readEvent.target).cata(
+        () => {
+          reject('No FileReaderProgressEvent target.');
+        },
+        (target: FileReader) => {
+          resolve(target.result);
+        });
     };
 
     fileReader.onerror = () => {
