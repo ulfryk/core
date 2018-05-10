@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@samwise-tech/di';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 import { Bind } from '../decorators';
 import { LogLevel } from '../model';
@@ -22,8 +22,8 @@ class BrowserLogger extends Logger {
   }
 
   @Bind public getConsoleEvents(allowedLogLevels: LogLevel[]): Observable<IEvent> {
-    return this.events$
-      .filter(({ level }) => allowedLogLevels.includes(level));
+    return this.events$.pipe(
+      filter(({ level }) => allowedLogLevels.includes(level)));
   }
 
   @Bind public log(...args: any[]): void {
