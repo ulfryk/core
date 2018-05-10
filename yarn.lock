@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@samwise-tech/di@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@samwise-tech/di/-/di-1.2.0.tgz#756deb47612096fef4c0f40e662eda67ac62f047"
+"@samwise-tech/di@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@samwise-tech/di/-/di-1.2.1.tgz#f2df1279ebf953dbfb7b5d53eb6b4beca538d392"
 
 "@samwise-tech/forbidden-patterns@1.0.3":
   version "1.0.3"

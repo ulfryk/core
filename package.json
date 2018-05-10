@@ -35,7 +35,7 @@
     "node": ">=8"
   },
   "dependencies": {
-    "@samwise-tech/di": "^1.2.0",
+    "@samwise-tech/di": "^1.2.1",
     "@types/lodash": "^4.14.80",
     "@types/uuid": "^3.4.3",
     "immutable": "^3.8.2",
