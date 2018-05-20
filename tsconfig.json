@@ -2,27 +2,25 @@
   "compileOnSave": false,
   "compilerOptions": {
     "allowSyntheticDefaultImports": false,
-    "alwaysStrict": true,
     "charset": "utf8",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "lib": ["dom", "es5", "es6", "es2016.array.include"],
+    "inlineSources": true,
+    "lib": ["es5", "es6", "dom", "es2016.array.include", "es2017.object"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmitHelpers": true,
-    "noImplicitAny": true,
+    "noErrorTruncation": true,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noStrictGenericChecks": true, // TEMPORARY
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "lib",
     "sourceMap": true,
-    "strictNullChecks": true,
+    "strict": true,
     "target": "es5",
-    "types": ["chai", "mocha", "node"]
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["chai", "mocha", "node"],
   },
   "exclude": ["node_modules", "lib"]
 }

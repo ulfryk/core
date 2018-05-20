@@ -5,9 +5,9 @@ export interface IStyles {
   readonly [className: string]: string;
 }
 
-const wrapString = (s: string) => JSON.stringify(s);
+const wrapString = (s?: string) => JSON.stringify(s);
 
-const getKey = (__: any, key: string) => key;
+const getKey = (__: any, key?: string) => key;
 
 /* tslint:disable:no-console */
 const assertStylesClasses = (mapping: Map<string, string>, styles: IStyles): void => {
@@ -15,7 +15,7 @@ const assertStylesClasses = (mapping: Map<string, string>, styles: IStyles): voi
   const classesCss = mapping.valueSeq().toSet();
 
   console.assert(
-    classesCss.every((className: string) => stylesCss.has(className)),
+    classesCss.every((className?: string) => stylesCss.has(className as string)),
     `CSS: "styles" should contain all "classes", but got it's missing: ` +
     classesCss.subtract(stylesCss).map(wrapString).join(', '));
 
@@ -33,7 +33,7 @@ const assertStylesClasses = (mapping: Map<string, string>, styles: IStyles): voi
 
   // https://regex101.com/r/AzZx1A/1
   const invalidStyles = Map<string, string>(styles)
-    .filterNot((className: string) => /^[a-zA-Z_][\d\w-_]*$/.test(className));
+    .filterNot((className?: string) => /^[a-zA-Z_][\d\w-_]*$/.test(className as string));
   console.assert(
     invalidStyles.isEmpty(),
     'CSS: All "styles" values should be valid CSS classes, but got invalid values under keys: ' +
@@ -48,5 +48,5 @@ export const getCSS = <T extends object>(classes: T, styles: IStyles): T => {
     assertStylesClasses(mapping, styles);
   }
 
-  return mapping.map((className: string) => styles[className]).toObject() as T;
+  return mapping.map((className?: string) => styles[className as string]).toObject() as T;
 };
