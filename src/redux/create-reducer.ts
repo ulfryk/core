@@ -8,7 +8,7 @@ export { AnyAction }; // so TSC does not complain
 export const createReducer = <S, A extends Action = IAnyAction>(
   initialState: S,
   mappings: [string, Reducer<S>][],
-  defaultReduction = (state: S, _action: A): S => state,
+  defaultReduction: Reducer<S> = (state: S | undefined, _action: AnyAction): S => state as S,
 ) => {
   const m = new Map(mappings);
   return (state = initialState, action: A): S =>
