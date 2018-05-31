@@ -10,6 +10,7 @@ export * from './is-different';
 export * from './key-code';
 export * from './last';
 export * from './multi-sum';
+export * from './smart-compare';
 export * from './split-by-phrase';
 export * from './substring';
 export * from './to-lower';
