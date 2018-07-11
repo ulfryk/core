@@ -1,11 +1,13 @@
 export interface IArrayMultiSum {
   <T>(
     items: T[],
-    ...accessors: ((item: T, index: number, array: T[]) => number)[],
+    // tslint:disable-next-line:trailing-comma
+    ...accessors: ((item: T, index: number, array: T[]) => number)[]
   ): number[];
   <T>(
     items: ReadonlyArray<T>,
-    ...accessors: ((item: T, index: number, array: ReadonlyArray<T>) => number)[],
+    // tslint:disable-next-line:trailing-comma
+    ...accessors: ((item: T, index: number, array: ReadonlyArray<T>) => number)[]
   ): ReadonlyArray<T>;
 }
 
