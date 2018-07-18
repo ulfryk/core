@@ -1,0 +1,54 @@
+{
+  "name": "@samwise-tech/redux",
+  "version": "0.1.0",
+  "description": "'redux' utilities for Samwise projects",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib-es6/index.js",
+  "scripts": {
+    "build:es5": "rm -rf ./lib && tsc --project tsconfig/cjs.json",
+    "build:es6": "rm -rf ./lib-es6 && tsc --project tsconfig/es6.json",
+    "build": "yarn build:es5 && yarn build:es6",
+    "lint": "tslint --project tsconfig/lint.json --format verbose './src/**/*.ts'",
+    "prepublishOnly": "yarn build",
+    "test": "yarn lint && yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samwise-tech/core.git"
+  },
+  "keywords": [
+    "redux",
+    "redux utilities",
+    "typescript",
+    "utilities"
+  ],
+  "author": "Technology Concepts & Design, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samwise-tech/core/issues"
+  },
+  "homepage": "https://github.com/samwise-tech/core#readme",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5",
+    "yarn": ">=1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "immutable": "^3.8.2",
+    "monet": "0.9.0-alpha.4",
+    "redux": "^4.0.0",
+    "tslib": "^1.9.3",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@samwise-tech/tslint-config": "1.0.6",
+    "@types/node": "10.5.2",
+    "@types/uuid": "3.4.3",
+    "tslint": "5.11.0",
+    "typescript": "2.9.2"
+  }
+}

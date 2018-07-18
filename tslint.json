@@ -1,6 +1,0 @@
-{
-  "extends": "@samwise-tech/tslint-config",
-  "rules": {
-    "readonly-array": false
-  }
-}

@@ -1,0 +1,11 @@
+{
+  "extends": "./base",
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "outDir": "../lib",
+    "target": "es5",
+    "preserveConstEnums": true
+  },
+  "exclude": ["../node_modules", "../src/**/*spec.ts"]
+}

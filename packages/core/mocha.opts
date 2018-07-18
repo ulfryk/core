@@ -1,0 +1,5 @@
+--colors
+--require ./config/ts-node-hook
+--reporter spec
+--recursive
+--watch-extensions ts
