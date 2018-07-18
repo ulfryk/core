@@ -1,6 +1,6 @@
 {
   "name": "@samwise-tech/redux",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "'redux' utilities for Samwise projects",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
