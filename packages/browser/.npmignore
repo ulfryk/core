@@ -3,7 +3,6 @@
 config/
 node_modules/
 src/
-lib/
 
 # config files
 
@@ -15,7 +14,3 @@ tsconfig.publish.json
 tsconfig.tslint.json
 tslint.json
 yarn.lock
-
-# ide configs
-
-.idea/

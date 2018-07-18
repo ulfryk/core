@@ -1,0 +1,12 @@
+# top-level directories
+
+node_modules/
+src/
+tsconfig/
+
+# config files
+
+.npmignore
+.travis.yml
+tslint.json
+yarn.lock

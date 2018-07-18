@@ -1,10 +1,8 @@
+import { Bind, IEvent, Logger, LogLevel } from '@samwise-tech/core';
 import { Inject, Injectable } from '@samwise-tech/di';
 import { Observable, Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
-import { Bind } from '../decorators';
-import { LogLevel } from '../model';
-import { IEvent, Logger } from '../services';
 import { JsConsole } from './js-console';
 
 type ConsoleMethod = 'debug' | 'error' | 'info' | 'log' | 'warn';
