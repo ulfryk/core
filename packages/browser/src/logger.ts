@@ -1,6 +1,4 @@
-import { Bind } from '@samwise-tech/core/decorators/bind'
-import { LogLevel } from '@samwise-tech/core/model/log-level'
-import { IEvent, Logger } from '@samwise-tech/core/services/logger'
+import { Bind, IEvent, Logger, LogLevel } from '@samwise-tech/core'
 import { Inject, Injectable } from '@samwise-tech/di'
 import { Observable, Subject } from 'rxjs'
 import { filter } from 'rxjs/operators'

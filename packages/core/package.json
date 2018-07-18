@@ -14,7 +14,7 @@
     "karma": "karma start config/karma.conf.js",
     "mocha": "mocha --opts ./mocha.opts './src/**/*.spec.ts'",
     "mocha:tdd": "yarn mocha --watch --reporter min",
-    "test": "yarn outdated && yarn check --integrity && yarn lint && yarn test-specs-for-only && yarn mocha && yarn karma && yarn build",
+    "test": "yarn lint && yarn test-specs-for-only && yarn mocha && yarn karma && yarn build",
     "test-specs-for-only": "forbidden 'src/**/*.spec.ts' -p describe.only it.only"
   },
   "repository": {
@@ -37,6 +37,9 @@
     "node": ">=8",
     "npm": ">=5",
     "yarn": ">=1"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "immutable": "^3.8.2",

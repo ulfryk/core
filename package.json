@@ -1,0 +1,22 @@
+{
+  "description": "Core utilities for Samwise projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samwise-tech/core.git"
+  },
+  "keywords": [
+    "core",
+    "typescript",
+    "monet",
+    "utilities"
+  ],
+  "author": "Technology Concepts & Design, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samwise-tech/core/issues"
+  },
+  "homepage": "https://github.com/samwise-tech/core#readme",
+  "devDependencies": {
+    "lerna": "^2.11.0"
+  }
+}
