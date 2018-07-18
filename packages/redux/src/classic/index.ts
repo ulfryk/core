@@ -1,2 +1,2 @@
-export * from './action';
-export * from './create-reducer';
+export * from './action'
+export * from './create-reducer'

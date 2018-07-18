@@ -1,16 +1,11 @@
 # top-level directories
 
-config/
 node_modules/
 src/
+tsconfig/
 
 # config files
 
 .npmignore
-.travis.yml
-mocha.opts
-tsconfig.json
-tsconfig.publish.json
-tsconfig.tslint.json
 tslint.json
 yarn.lock

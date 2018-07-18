@@ -1,6 +1,6 @@
 {
   "extends": "@samwise-tech/tslint-config",
   "rules": {
-    "readonly-array": false
+    "semicolon": [true, "never"]
   }
 }

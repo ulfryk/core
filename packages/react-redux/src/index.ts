@@ -1,2 +1,2 @@
-export * from './connect-class';
-export * from './connect-pure';
+export * from './connect-class'
+export * from './connect-pure'

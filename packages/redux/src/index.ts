@@ -1,2 +1,2 @@
-export * from './classic';
-export * from './reducer-dispatcher';
+export * from './classic'
+export * from './reducer-dispatcher'
