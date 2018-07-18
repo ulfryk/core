@@ -14,13 +14,5 @@ cache: yarn
 before_install:
   - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n" >> .npmrc
 
-install:
-  - npm install --global lerna
-  - lerna bootstrap
-  - lerna run prepublishOnly
-
-script:
-  - lerna --since=develop run test
-
 after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && lerna publish
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && 

@@ -16,7 +16,13 @@
     "url": "https://github.com/samwise-tech/core/issues"
   },
   "homepage": "https://github.com/samwise-tech/core#readme",
+  "scripts": {
+    "postinstall": "lerna bootstrap && lerna run prepublishOnly",
+    "prepare-release": "lerna --since=develop publish --skip-npm",
+    "release": "lerna publish --skip-git --skip-npm",
+    "test": "lerna --since=develop run test"
+  },
   "devDependencies": {
-    "lerna": "^2.11.0"
+    "lerna": "2.11.0"
   }
 }
