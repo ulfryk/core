@@ -1,11 +1,11 @@
-import { Maybe } from 'monet';
+import { Maybe } from 'monet'
 
 export interface IArrayFind {
-  <T>(items: T[], predicate: (item: T, index: number, array: T[]) => boolean): Maybe<T>;
+  <T>(items: T[], predicate: (item: T, index: number, array: T[]) => boolean): Maybe<T>
   <T>(
     items: ReadonlyArray<T>,
     predicate: (item: T, index: number, array: ReadonlyArray<T>) => boolean,
-  ): Maybe<T>;
+  ): Maybe<T>
 }
 
 /**
@@ -15,4 +15,4 @@ export interface IArrayFind {
  * - Some(item) if item was found.
  */
 export const find: IArrayFind = (items: any, predicate: any) =>
-  Maybe.fromNull(items.find(predicate));
+  Maybe.fromNull(items.find(predicate))

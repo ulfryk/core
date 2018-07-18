@@ -1,5 +1,5 @@
-const path = require('path');
-const webpackConfig = require('./webpack.test');
+const path = require('path')
+const webpackConfig = require('./webpack.test')
 
 module.exports = (config) => {
   config.set({
@@ -22,5 +22,5 @@ module.exports = (config) => {
     singleRun: true,
     concurrency: 6e6,
     mime: { 'text/x-typescript': ['ts'] },
-  });
-};
+  })
+}

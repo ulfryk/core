@@ -1,4 +1,4 @@
-import { Maybe } from 'monet';
+import { Maybe } from 'monet'
 
 /**
  * @description
@@ -7,4 +7,4 @@ import { Maybe } from 'monet';
  * - Some(index) if item was found
  */
 export const indexOf = (text: string, searchValue: string, fromIndex?: number): Maybe<number> =>
-  Maybe.fromNull(text.indexOf(searchValue, fromIndex)).filter(index => index > -1);
+  Maybe.fromNull(text.indexOf(searchValue, fromIndex)).filter(index => index > -1)

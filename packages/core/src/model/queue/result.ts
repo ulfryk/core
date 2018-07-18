@@ -1,15 +1,15 @@
-import { Either, Left, Right } from 'monet';
+import { Either, Left, Right } from 'monet'
 
-import { IEnvelopeId } from './envelope-id';
+import { IEnvelopeId } from './envelope-id'
 
 export class Result<T = any> {
 
   public static success(id: IEnvelopeId, label?: string) {
-    return <V>(data: V) => new Result<V>(Right<any, V>(data), id, label);
+    return <V>(data: V) => new Result<V>(Right<any, V>(data), id, label)
   }
 
   public static fail<V>(id: IEnvelopeId, label?: string) {
-    return (error: any) => new Result<V>(Left<any, V>(error), id, label);
+    return (error: any) => new Result<V>(Left<any, V>(error), id, label)
   }
 
   constructor(

@@ -1,7 +1,7 @@
 /* tslint:disable:no-magic-numbers */
-import { expect } from 'chai';
+import { expect } from 'chai'
 
-import { hash } from './hash';
+import { hash } from './hash'
 
 const mock = {
   current_total: null as (number | null),
@@ -30,23 +30,23 @@ const mock = {
   tagged_lds_description: null as (string | null),
   timekeeper: null as (object | null),
   vendor: null as (object | null),
-};
+}
 
 describe('utils', () => {
 
   describe('hash(a)', () => {
 
     it('should be a function', () => {
-      expect(hash).to.be.an.instanceof(Function);
-    });
+      expect(hash).to.be.an.instanceof(Function)
+    })
 
     it('should convert any JS value to hash string', () => {
-      expect(hash(mock)).to.equal(1823455495);
-      expect(hash('Lorem ipsum')).to.equal(1580618281);
-      expect(hash(111)).to.equal(48657);
-      expect(hash({ hello: 'World!' })).to.equal(1416959369);
-    });
+      expect(hash(mock)).to.equal(1823455495)
+      expect(hash('Lorem ipsum')).to.equal(1580618281)
+      expect(hash(111)).to.equal(48657)
+      expect(hash({ hello: 'World!' })).to.equal(1416959369)
+    })
 
-  });
+  })
 
-});
+})

@@ -1,4 +1,4 @@
-import { Maybe } from 'monet';
+import { Maybe } from 'monet'
 
 /**
  * @description
@@ -7,4 +7,4 @@ import { Maybe } from 'monet';
  * - Some(foundSubstring) if substring is 1 char or longer
  */
 export const substring = (text: string, start = 0, end?: number): Maybe<string> =>
-  Maybe.fromNull(text.substring(start, end)).filter(Boolean);
+  Maybe.fromNull(text.substring(start, end)).filter(Boolean)

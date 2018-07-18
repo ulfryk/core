@@ -1,15 +1,15 @@
-import { Set } from 'immutable';
-import { Maybe, None, Some } from 'monet';
+import { Set } from 'immutable'
+import { Maybe, None, Some } from 'monet'
 
-import { Bind } from '../../decorators';
-import { first } from '../../utils';
-import { Envelope } from './envelope';
-import { IEnvelopeId } from './envelope-id';
+import { Bind } from '../../decorators'
+import { first } from '../../utils'
+import { Envelope } from './envelope'
+import { IEnvelopeId } from './envelope-id'
 
 export class Accumulator {
 
   public static empty(concurrencyLimit: number) {
-    return new Accumulator(None<Envelope>(), [], Set<IEnvelopeId>(), concurrencyLimit);
+    return new Accumulator(None<Envelope>(), [], Set<IEnvelopeId>(), concurrencyLimit)
   }
 
   private constructor(
@@ -18,11 +18,11 @@ export class Accumulator {
     public readonly processing: Set<IEnvelopeId>,
     private readonly concurrencyLimit: number,
   ) {
-    Bind.to(this);
+    Bind.to(this)
     if (process.env.NODE_ENV !== 'production') {
       if (processing.size > this.concurrencyLimit) {
         throw Error(`Number of processed actions (${processing.size}) ` +
-          `in queue exceeds limit (${this.concurrencyLimit}).`);
+          `in queue exceeds limit (${this.concurrencyLimit}).`)
       }
     }
   }
@@ -38,17 +38,17 @@ export class Accumulator {
         None(),
         this.pending.concat(action),
         this.processing,
-        this.concurrencyLimit);
+        this.concurrencyLimit)
   }
 
   @Bind public done(doneId: IEnvelopeId) {
-    const nextToProcess = first(this.pending);
+    const nextToProcess = first(this.pending)
     return new Accumulator(
       nextToProcess,
       this.pending.slice(1),
       nextToProcess.foldLeft(this.processing.remove(doneId))(
         (processing, { id }) => processing.add(id)),
-      this.concurrencyLimit);
+      this.concurrencyLimit)
   }
 
 }

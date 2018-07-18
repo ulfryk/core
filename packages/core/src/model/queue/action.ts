@@ -1,1 +1,1 @@
-export type QueueAction<T = any> = () => Promise<T>;
+export type QueueAction<T = any> = () => Promise<T>

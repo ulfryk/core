@@ -1,2 +1,2 @@
-export * from './get-all-nodes';
-export * from './tree';
+export * from './get-all-nodes'
+export * from './tree'

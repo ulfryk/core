@@ -1,5 +1,5 @@
 --colors
---require ts-node/register/type-check
+--require ./config/ts-node-hook
 --reporter spec
 --recursive
 --watch-extensions ts

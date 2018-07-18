@@ -1,3 +1,3 @@
 export interface ITree<T extends ITree<T>> {
-  readonly children: T[] | null;
+  readonly children: ReadonlyArray<T> | null
 }

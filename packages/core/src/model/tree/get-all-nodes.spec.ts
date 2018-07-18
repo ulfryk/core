@@ -1,8 +1,8 @@
 /* tslint:disable:no-magic-numbers */
-import { expect } from 'chai';
+import { expect } from 'chai'
 
-import { getAllNodes } from './get-all-nodes';
-import { ITree } from './tree';
+import { getAllNodes } from './get-all-nodes'
+import { ITree } from './tree'
 
 const mock: ITree<any> = {
   children: [
@@ -19,7 +19,7 @@ const mock: ITree<any> = {
       children: [{ children: null }],
     },
   ],
-};
+}
 
 describe('model', () => {
   describe('tree', () => {
@@ -39,13 +39,13 @@ describe('model', () => {
           (mock.children as ITree<any>[])[2],
           (mock.children as ITree<any>[])[3],
           ((mock.children as ITree<any>[])[3].children as ITree<any>[])[0],
-        ]);
-      });
+        ])
+      })
 
       it('should handle empty parameters', () => {
-        expect(getAllNodes({} as ITree<any>)).to.deep.equal([{}]);
-      });
+        expect(getAllNodes({} as ITree<any>)).to.deep.equal([{}])
+      })
 
-    });
-  });
-});
+    })
+  })
+})

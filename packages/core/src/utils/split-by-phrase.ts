@@ -1,10 +1,10 @@
-import { Maybe } from 'monet';
+import { Maybe } from 'monet'
 
-import { indexOf } from './index-of';
-import { substring } from './substring';
-import { toLower } from './to-lower';
+import { indexOf } from './index-of'
+import { substring } from './substring'
+import { toLower } from './to-lower'
 
-export type SplitText = [Maybe<string>, Maybe<string>, Maybe<string>];
+export type SplitText = [Maybe<string>, Maybe<string>, Maybe<string>]
 
 export const splitByPhrase = (phrase: Maybe<string>, text: string): Maybe<SplitText> =>
   phrase
@@ -15,4 +15,4 @@ export const splitByPhrase = (phrase: Maybe<string>, text: string): Maybe<SplitT
       substring(text, 0, start),
       substring(text, start, end),
       substring(text, end),
-    ]);
+    ])

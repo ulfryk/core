@@ -1,13 +1,13 @@
-import * as uuid from 'uuid';
+import * as uuid from 'uuid'
 
-import { QueueAction } from './action';
-import { IEnvelopeId } from './envelope-id';
-import { Result } from './result';
+import { QueueAction } from './action'
+import { IEnvelopeId } from './envelope-id'
+import { Result } from './result'
 
 export class Envelope<T = any> {
 
   public static of<V>(action: QueueAction<V>, label?: string) {
-    return new Envelope<V>(action, uuid.v4() as IEnvelopeId, label);
+    return new Envelope<V>(action, uuid.v4() as IEnvelopeId, label)
   }
 
   private constructor(
@@ -17,12 +17,12 @@ export class Envelope<T = any> {
   ) {}
 
   public run(): Promise<Result<T>> {
-    const { id, label } = this;
-    return this.action().then(Result.success(id, label), Result.fail<T>(id, label));
+    const { id, label } = this
+    return this.action().then(Result.success(id, label), Result.fail<T>(id, label))
   }
 
   public toString() {
-    return `Envelope { ${this.label} :: ${this.id} }`;
+    return `Envelope { ${this.label} :: ${this.id} }`
   }
 
 }
