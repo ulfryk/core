@@ -1,6 +1,6 @@
 {
   "name": "@samwise-tech/browser",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Browser specific utilities for Samwise projects",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
