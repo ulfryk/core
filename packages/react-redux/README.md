@@ -1,2 +1,3 @@
-# core
-Core utilities for Samwise projects
+# @samwise-tech/react-redux
+
+Few 'react-redux' utilities for Samwise projects

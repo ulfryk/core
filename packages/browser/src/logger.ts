@@ -1,69 +1,71 @@
-import { Bind, IEvent, Logger, LogLevel } from '@samwise-tech/core';
-import { Inject, Injectable } from '@samwise-tech/di';
-import { Observable, Subject } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { Bind } from '@samwise-tech/core/decorators/bind'
+import { LogLevel } from '@samwise-tech/core/model/log-level'
+import { IEvent, Logger } from '@samwise-tech/core/services/logger'
+import { Inject, Injectable } from '@samwise-tech/di'
+import { Observable, Subject } from 'rxjs'
+import { filter } from 'rxjs/operators'
 
-import { JsConsole } from './js-console';
+import { JsConsole } from './js-console'
 
-type ConsoleMethod = 'debug' | 'error' | 'info' | 'log' | 'warn';
+type ConsoleMethod = 'debug' | 'error' | 'info' | 'log' | 'warn'
 
 @Injectable()
 class BrowserLogger extends Logger {
 
-  private readonly events$ = new Subject<IEvent>();
+  private readonly events$ = new Subject<IEvent>()
 
   constructor(
     @Inject(JsConsole) private readonly nativeConsole: JsConsole,
   ) {
-    super();
-    Bind.to(this);
+    super()
+    Bind.to(this)
   }
 
   @Bind public getConsoleEvents(allowedLogLevels: LogLevel[]): Observable<IEvent> {
     return this.events$.pipe(
-      filter(({ level }) => allowedLogLevels.includes(level)));
+      filter(({ level }) => allowedLogLevels.includes(level)))
   }
 
   @Bind public log(...args: any[]): void {
-    this.callMethod(LogLevel.Log, ...args);
+    this.callMethod(LogLevel.Log, ...args)
   }
 
   @Bind public warn(warnMsg: any, ...args: any[]): void {
-    this.callMethod(LogLevel.Warn, ...[warnMsg, ...args]);
+    this.callMethod(LogLevel.Warn, ...[warnMsg, ...args])
   }
 
   @Bind public error(errMsg: any): void {
-    const error = errMsg instanceof Error ? errMsg : new Error(errMsg);
-    this.callMethod(LogLevel.Error, error);
+    const error = errMsg instanceof Error ? errMsg : new Error(errMsg)
+    this.callMethod(LogLevel.Error, error)
   }
 
   @Bind public debug(...args: any[]): void {
-    this.callMethod(LogLevel.Debug, ...args);
+    this.callMethod(LogLevel.Debug, ...args)
   }
 
   @Bind public info(infoMsg: any, ...args: any[]): void {
-    this.callMethod(LogLevel.Info, ...[infoMsg, ...args]);
+    this.callMethod(LogLevel.Info, ...[infoMsg, ...args])
   }
 
   public onCatch<T>(label: string) {
     return (err: any) => {
       if (err instanceof Error) {
-        this.error(err);
+        this.error(err)
       } else {
-        this.error(label);
-        this.debug(`${label} Due:`, err);
+        this.error(label)
+        this.debug(`${label} Due:`, err)
       }
-      return Promise.reject<T>(err);
-    };
+      return Promise.reject<T>(err)
+    }
   }
 
   private callMethod(level: LogLevel, ...args: any[]): void {
     if (process.env.NODE_ENV !== 'production') {
-      this.events$.next({ level, data: args });
-      (this.nativeConsole[level as ConsoleMethod] as (...args: any[]) => void)(...args);
+      this.events$.next({ level, data: args })
+      this.nativeConsole[level as ConsoleMethod](...args) // ( as (...args: any[]) => void)
     }
   }
 
 }
 
-export { BrowserLogger };
+export { BrowserLogger }

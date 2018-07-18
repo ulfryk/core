@@ -1,3 +1,3 @@
 # @samwise-tech/redux
 
-Redux utilities
+Few 'redux' utilities for Samwise projects

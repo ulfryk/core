@@ -1,23 +1,23 @@
-import { Maybe } from 'monet';
+import { Maybe } from 'monet'
 
 export const readWebFile = (file: File) =>
   new Promise<string>((resolve, reject) => {
 
-    const fileReader = new FileReader();
+    const fileReader = new FileReader()
 
     fileReader.onload = (readEvent: FileReaderProgressEvent) => {
       Maybe.fromNull(readEvent.target).cata(
         () => {
-          reject('No FileReaderProgressEvent target.');
+          reject('No FileReaderProgressEvent target.')
         },
         (target: FileReader) => {
-          resolve(target.result);
-        });
-    };
+          resolve(target.result)
+        })
+    }
 
     fileReader.onerror = () => {
-      reject(fileReader.error);
-    };
+      reject(fileReader.error)
+    }
 
-    fileReader.readAsText(file); // starts async read
-  });
+    fileReader.readAsText(file) // starts async read
+  })
