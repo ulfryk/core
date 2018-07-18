@@ -17,10 +17,10 @@ before_install:
 install:
   - npm install --global lerna
   - lerna bootstrap
-  - lerna exec --concurrency 1 -- yarn prepublishOnly
+  - lerna run prepublishOnly
 
 script:
-  - lerna exec --concurrency 1 -- yarn test
+  - lerna --since=develop run test
 
 after_success:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && lerna publish
