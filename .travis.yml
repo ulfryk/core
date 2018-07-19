@@ -12,6 +12,7 @@ branches:
 cache: yarn
 
 before_install:
+  - ./scripts/update-git-tree.sh
   - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n" >> .npmrc
   - git fetch
 

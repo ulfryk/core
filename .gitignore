@@ -18,6 +18,8 @@ node_modules/
 # Optional npm cache directory
 .npm
 
+.npmrc
+
 # Output dir
 lib/
 lib-es6/
