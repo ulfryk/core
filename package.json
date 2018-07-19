@@ -19,9 +19,10 @@
   "scripts": {
     "travis:preinstall": "./scripts/update-git-tree.sh",
     "travis:postinstall": "lerna bootstrap && lerna run prepublishOnly && yarn travis:add-npmrc",
-    "travis:add-npmrc": "lerna exec -- 'printf \"//registry.npmjs.org/:_authToken=${NPM_TOKEN}\\n\" >> .npmrc'",
+    "travis:add-npmrc": "lerna exec -- 'printf \"//registry.npmjs.org/:_authToken=${NPM_TOKEN_FAKE}\\n\" >> .npmrc'",
     "prepare-release": "lerna publish --skip-npm",
     "release": "lerna --bail=false exec -- 'can-npm-publish && npm publish'",
+    "release:tmp-browser": "cd packages/browser/ && cat .npmrc && rm .npmrc && printf \"//registry.npmjs.org/:_authToken=${NPM_TOKEN_FAKE}\\n\" >> .npmrc && cat .npmrc && npm publish",
     "test": "lerna --since=develop run test"
   },
   "devDependencies": {
