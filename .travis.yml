@@ -13,7 +13,7 @@ cache: yarn
 
 before_install:
   - ./scripts/update-git-tree.sh
-  - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n" >> .npmrc
+  - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n" >> ~/.npmrc
 
 after_success:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && yarn release
