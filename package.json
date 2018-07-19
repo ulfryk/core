@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/samwise-tech/core#readme",
   "scripts": {
-    "postinstall": "lerna bootstrap && lerna run prepublishOnly",
+    "travis:preinstall": "./scripts/update-git-tree.sh",
+    "travis:postinstall": "lerna bootstrap && lerna run prepublishOnly && yarn travis:add-npmrc",
+    "travis:add-npmrc": "lerna exec -- 'printf \"//registry.npmjs.org/:_authToken=${NPM_TOKEN}\\n\" >> .npmrc'",
     "prepare-release": "lerna publish --skip-npm",
     "release": "lerna --bail=false exec -- 'can-npm-publish && npm publish'",
     "test": "lerna --since=develop run test"
