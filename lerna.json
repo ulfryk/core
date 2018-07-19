@@ -6,6 +6,9 @@
   ],
   "version": "independent",
   "command": {
+    "publish": {
+      "npmClient": "npm"
+    },
     "run": {
       "npmClient": "yarn"
     }
