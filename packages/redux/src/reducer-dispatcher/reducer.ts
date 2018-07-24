@@ -2,7 +2,7 @@ import { Map } from 'immutable'
 import { Maybe } from 'monet'
 import { combineReducers, Dispatch, Reducer as ReduxReducer, StoreEnhancer } from 'redux'
 
-import { ENHANCE_DISPATCHER, REDUCERS } from './tokens'
+import { DISPATCH, ENHANCE_DISPATCHER, REDUCERS } from './tokens'
 
 export abstract class Reducer<S> {
 
@@ -23,8 +23,9 @@ export abstract class Reducer<S> {
     return combineReducers(reducers.map(one => (one as Reducer<any>).reduce).toObject())
   }
 
-  private readonly [REDUCERS]: Map<string, ReduxReducer<S>>
-  private readonly [ENHANCE_DISPATCHER]: (dispatch: Dispatch) => void
+  protected readonly [REDUCERS]!: Map<string, ReduxReducer<S>>
+  // tslint:disable-next-line:readonly-keyword
+  protected [DISPATCH]: Dispatch
 
   constructor(protected state: S) {
     this.reduce = this.reduce.bind(this)
@@ -36,6 +37,10 @@ export abstract class Reducer<S> {
     Maybe.fromNull(this[REDUCERS].get(type)).forEach(reduction => reduction.apply(this, args))
 
     return this.state
+  }
+
+  protected [ENHANCE_DISPATCHER](dispatch: Dispatch) {
+    this[DISPATCH] = dispatch
   }
 
 }
