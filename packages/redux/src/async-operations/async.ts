@@ -29,7 +29,7 @@ const getFailAction =
     status: RequestState.Fail,
   })
 
-const geDoneAction =
+const getDoneAction =
   <T>(base: IAsyncOperationsActionBase, data: T): IAsyncOperationsDoneAction<T> => ({
     ...base,
     data,
@@ -58,7 +58,7 @@ export const asyncFactory =
           resolved.cata(reason => {
             dispatcher[DISPATCH](getFailAction(action, reason))
           }, response => {
-            dispatcher[DISPATCH](geDoneAction(action, response))
+            dispatcher[DISPATCH](getDoneAction(action, response))
           })
         }, (reason: any) => {
           dispatcher[DISPATCH](getFailAction(action, reason))
@@ -67,7 +67,7 @@ export const asyncFactory =
       } else {
 
         promise.then((response: any) => {
-          dispatcher[DISPATCH](geDoneAction(action, response))
+          dispatcher[DISPATCH](getDoneAction(action, response))
         }, (reason: any) => {
           dispatcher[DISPATCH](getFailAction(action, reason))
         })
