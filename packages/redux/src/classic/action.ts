@@ -1,7 +1,6 @@
 import { Action } from 'redux'
 
-export interface IAnyAction extends Action {
-  readonly type: string
+export interface IAnyAction extends Action<string> {
   readonly payload?: any
 }
 
