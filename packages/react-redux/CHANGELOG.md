@@ -12,8 +12,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * Minor typo in code ([a16ecb5](https://github.com/samwise-tech/core/commit/a16ecb5))
 
 
-
-
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/samwise-tech/core/compare/@samwise-tech/react-redux@1.0.0...@samwise-tech/react-redux@1.0.1) (2018-07-24)
 
