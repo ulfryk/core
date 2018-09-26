@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/samwise-tech/core/compare/@samwise-tech/browser@1.0.2...@samwise-tech/browser@1.0.3) (2018-09-26)
+
+
+### Bug Fixes
+
+* Update dependencies ([34601d3](https://github.com/samwise-tech/core/commit/34601d3))
+
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/samwise-tech/core/compare/@samwise-tech/browser@1.0.1...@samwise-tech/browser@1.0.2) (2018-09-26)
 
