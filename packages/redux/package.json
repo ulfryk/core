@@ -1,6 +1,6 @@
 {
   "name": "@samwise-tech/redux",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "'redux' utilities for Samwise projects",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -38,7 +38,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@samwise-tech/core": "2.0.1",
+    "@samwise-tech/core": "^2.0.2",
     "immutable": "^3.8.2",
     "monet": "0.9.0-alpha.4",
     "redux": "^4.0.0",
