@@ -27,14 +27,22 @@ Object.assign(Bind, {
 
   key,
 
-  static: <T>(__: T, ___: string, descriptor: PropertyDescriptor): PropertyDescriptor => {
+  static: (
+    __: any,
+    name: string,
+    descriptor: PropertyDescriptor,
+  ): PropertyDescriptor => {
 
     const { value, writable, ...rest } = descriptor
+    const bindStaticKey = Symbol(`'__BIND_STATIC__'${name}`)
 
     return {
       ...rest,
-      get(this: T) {
-        return value.bind(this)
+      get(this: any) {
+        return (this[bindStaticKey] || value).bind(this)
+      },
+      set(this: any, fn: Function) {
+        this[bindStaticKey] = fn
       },
     }
 

@@ -5,13 +5,13 @@ export const readWebFile = (file: File) =>
 
     const fileReader = new FileReader()
 
-    fileReader.onload = (readEvent: FileReaderProgressEvent) => {
-      Maybe.fromNull(readEvent.target).cata(
+    fileReader.onload = (readEvent: any) => {
+      Maybe.fromNull(readEvent.target).cata<void>(
         () => {
           reject('No FileReaderProgressEvent target.')
         },
         (target: FileReader) => {
-          resolve(target.result)
+          resolve(target.result as string)
         })
     }
 
