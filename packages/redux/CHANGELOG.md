@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/samwise-tech/core/compare/@samwise-tech/redux@1.1.2...@samwise-tech/redux@1.1.3) (2018-11-15)
+
+
+### Bug Fixes
+
+* Update dependencies ([d6b30d4](https://github.com/samwise-tech/core/commit/d6b30d4))
+
+
+
+
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/samwise-tech/core/compare/@samwise-tech/redux@1.1.1...@samwise-tech/redux@1.1.2) (2018-09-26)
 
