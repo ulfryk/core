@@ -4,6 +4,7 @@ export interface IPaginationNavsConfig {
   readonly wrap?: number
 }
 
+// tslint:disable:no-array-mutation
 const range = (start: number, end: number): number[] => Array(end - start)
   .fill(0)
   .map((__, i) => i + start)
@@ -58,6 +59,7 @@ export class Nav {
   private static prepareSeparatedNavs(
     { lower, upper, first, last, current }: { readonly [key: string]: number },
   ): Nav[] {
+    // tslint:disable:no-array-mutation
     return Array.from(new Set(range(lower, upper + 1).concat([first, last])))
       .sort((a, b) => a - b)
       .filter(page => page >= 0 && page <= last)

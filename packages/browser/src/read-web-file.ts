@@ -5,6 +5,7 @@ export const readWebFile = (file: File) =>
 
     const fileReader = new FileReader()
 
+    // tslint:disable-next-line:no-object-mutation
     fileReader.onload = (readEvent: any) => {
       Maybe.fromNull(readEvent.target).cata<void>(
         () => {
@@ -15,6 +16,7 @@ export const readWebFile = (file: File) =>
         })
     }
 
+    // tslint:disable-next-line:no-object-mutation
     fileReader.onerror = () => {
       reject(fileReader.error)
     }
