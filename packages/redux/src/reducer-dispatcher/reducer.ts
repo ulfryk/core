@@ -32,6 +32,7 @@ export abstract class Reducer<S> {
   }
 
   public reduce(state: S | undefined, { args, type }: any) {
+    // tslint:disable-next-line:no-object-mutation
     this.state = Maybe.fromNull(state).orJust(this.state)
 
     Maybe.fromNull(this[REDUCERS].get(type)).forEach(reduction => reduction.apply(this, args))
@@ -40,6 +41,7 @@ export abstract class Reducer<S> {
   }
 
   protected [ENHANCE_DISPATCHER](dispatch: Dispatch) {
+    // tslint:disable-next-line:no-object-mutation
     this[DISPATCH] = dispatch
   }
 

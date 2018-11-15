@@ -17,7 +17,7 @@ const getFailedAction = (rejection: string, timeout: number): QueueAction<string
     }, timeout)
   })
 
-// tslint:disable:no-magic-numbers
+// tslint:disable:no-magic-numbers no-array-mutation
 describe('Queue', () => {
 
   it('should not start tasks when pending buffer is full', done => {

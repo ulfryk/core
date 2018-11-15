@@ -1,6 +1,6 @@
 {
   "name": "@samwise-tech/browser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Browser specific utilities for Samwise projects",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -39,18 +39,18 @@
     "access": "public"
   },
   "dependencies": {
-    "@samwise-tech/core": "^2.0.3",
-    "@samwise-tech/di": "^1.2.2",
+    "@samwise-tech/core": "^2.0.4",
+    "@samwise-tech/di": "^1.2.3",
     "monet": "0.9.0-alpha.4",
-    "rxjs": "^6.2.2",
+    "rxjs": "^6.3.3",
     "tslib": "^1.9.3"
   },
   "devDependencies": {
-    "@samwise-tech/tslint-config": "1.0.6",
-    "@types/node": "10.11.0",
+    "@samwise-tech/tslint-config": "1.0.7",
+    "@types/node": "10.12.8",
     "reflect-metadata": "^0.1.12",
     "tslint": "5.11.0",
-    "typescript": "3.0.3"
+    "typescript": "3.1.6"
   },
   "peerDependencies": {
     "reflect-metadata": "^0.1.12"

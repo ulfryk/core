@@ -3,6 +3,7 @@ abstract class Plainable<P> {
 }
 
 interface IPlainableStatic<P, E> {
+  // tslint:disable-next-line:no-method-signature
   fromPlain(plain: P): E
 }
 

@@ -15,12 +15,14 @@ const getCurrent = (source: any): Set<string> => source[key] || new Set<string>(
 
 const Bind: IBindDecorator =
   ((target: any, propertyKey: string, _descriptor: PropertyDescriptor) => {
+    // tslint:disable-next-line:no-object-mutation
     target[key] = getCurrent(target).add(propertyKey)
   }) as any
 
 Object.assign(Bind, {
 
   all: (target: any) => {
+    // tslint:disable-next-line:no-object-mutation
     target.prototype[key] = Object.keys(target.prototype)
       .reduce((keys, targetKey) => keys.add(targetKey), getCurrent(target.prototype))
   },
@@ -42,6 +44,7 @@ Object.assign(Bind, {
         return (this[bindStaticKey] || value).bind(this)
       },
       set(this: any, fn: Function) {
+        // tslint:disable-next-line:no-object-mutation
         this[bindStaticKey] = fn
       },
     }

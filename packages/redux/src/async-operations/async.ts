@@ -43,7 +43,7 @@ export const asyncFactory =
 
     const original = descriptor.value
 
-    // tslint:disable-next-line:readonly-array
+    // tslint:disable-next-line:no-object-mutation
     descriptor.value = function(this: any, ...args: any[]) {
 
       const action = getAction(`${propName}:async:${uuid.v4()}`, name, args)
